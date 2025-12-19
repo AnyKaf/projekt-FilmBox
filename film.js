@@ -208,3 +208,20 @@ detailFilmu.innerHTML += `
 </div>
 `
 
+const noteForm = document.querySelector("#note-form")
+const messageInput = document.querySelector("#message-input")
+const checkbox = document.querySelector("#terms-checkbox")
+
+noteForm.addEventListener("submit", (e) => {e.preventDefault()
+    messageInput.classList.remove("is-invalid")
+    checkbox.classList.remove("is-invalid")
+
+    if(messageInput.value.trim() === ""){
+        messageInput.classList.add("is-invalid")}
+    else{
+        if(!checkbox.checked){
+            checkbox.classList.add("is-invalid")}
+        else{
+            noteForm.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`
+        }}
+})
