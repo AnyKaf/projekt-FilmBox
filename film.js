@@ -103,6 +103,19 @@ const filmy = [
 			'Na zámek v podhůří Krkonoš přijíždí jeho nový majitel Štěpán se svojí snoubenkou, krásnou komtesou Blankou, a mladším bratrem Adamem. Cestou kočár nešťastně srazí kolemjdoucí dívku, Adam jí pomůže a ona se do něj zamiluje. Na zámku Adam objeví starou vlašskou knihu, která by měla obsahovat cestu k pokladům. Tajemné značky vlašské knihy však nedokáže vyluštit ani národopisec Jiráček, který v kraji sbírá pověsti a nevychází z údivu nad tím, že zdejší lidé stále věří v Krakonoše. Na zámku se objeví záhadný cizinec a nabídne Štěpánovi, že jej k pokladu za určitých podmínek dovede. Výprava do hor může začít. Naplní se Liduščina láska k Adamovi? Jakou záhadu skrývá starý obraz na zámku Hůrka a co strašlivého se v horách kdysi odehrálo? A kdo je vlastně Krakonoš a jaké je jeho největší tajemství? (csfd.cz, Česká televize)',
 		premiera: '2022-12-24',
 	},
+	{
+		id: 'babyteeth',
+		nazev: 'Než skončí léto',
+		plakat: {
+			url: '//image.pmgstatic.com/cache/resized/w663/files/images/film/posters/164/582/164582188_be5aff.jpg',
+			sirka: 420,
+			vyska: 592,
+		},
+		ochutnavka: 'Žij, jako bys neměl co ztratit',
+		popis:
+			'Život je krásný i proto, že se nedá naplánovat. Když se šestnáctiletá Milla zamiluje do průšviháře Mosese, je to pro její rodiče noční můra. První setkání s láskou ale probouzí v nemocné Mille novou chuť do života a její energie a touha objevovat brzy otočí celou rodinu vzhůru nohama. Milla začne svému překvapenému okolí ukazovat, jak prožít každou minutu naplno. Tradiční pravidla a morální poučky letí do koše a rodiče se rozhodnou dát věcem volný průběh. S lehkostí a originálním humorem vyprávěné australské drama se stalo diváckým hitem festivalu v Benátkách, odkud si film odnesl několik cen. (MFF Karlovy Vary) ',
+		premiera: '2020-06-03',
+	},
 ]
 
 
@@ -208,11 +221,11 @@ detailFilmu.innerHTML += `
 </div>
 `
 
-const noteForm = document.querySelector("#note-form")
+const poznamkaFormular = document.querySelector("#note-form")
 const messageInput = document.querySelector("#message-input")
 const checkbox = document.querySelector("#terms-checkbox")
 
-noteForm.addEventListener("submit", (e) => {e.preventDefault()
+poznamkaFormular.addEventListener("submit", (e) => {e.preventDefault()
     messageInput.classList.remove("is-invalid")
     checkbox.classList.remove("is-invalid")
 
@@ -222,6 +235,6 @@ noteForm.addEventListener("submit", (e) => {e.preventDefault()
         if(!checkbox.checked){
             checkbox.classList.add("is-invalid")}
         else{
-            noteForm.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`
+            poznamkaFormular.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`
         }}
 })
