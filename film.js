@@ -230,10 +230,12 @@ poznamkaFormular.addEventListener("submit", (e) => {e.preventDefault()
     checkbox.classList.remove("is-invalid")
 
     if(messageInput.value.trim() === ""){
-        messageInput.classList.add("is-invalid")}
+        messageInput.classList.add("is-invalid")
+        messageInput.focus()}
     else{
         if(!checkbox.checked){
-            checkbox.classList.add("is-invalid")}
+            checkbox.classList.add("is-invalid")
+            checkbox.focus()}
         else{
             poznamkaFormular.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`
         }}
