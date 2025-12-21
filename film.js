@@ -124,7 +124,6 @@ const filmId = window.location.hash.slice(1);
 const filmData = filmy.find((film) => film.id === filmId)
 
 const detailFilmu = document.querySelector("#detail-filmu")
-// const datum = (filmData.premiera).format("DD.MM.YYYY")
 detailFilmu.innerHTML += `
 <div class="row g-0">
 <div class="col-md-5">
@@ -229,14 +228,13 @@ poznamkaFormular.addEventListener("submit", (e) => {e.preventDefault()
     messageInput.classList.remove("is-invalid")
     checkbox.classList.remove("is-invalid")
 
-    if(messageInput.value.trim() === ""){
-        messageInput.classList.add("is-invalid")
-        messageInput.focus()}
+if(messageInput.value.trim() === ""){
+    messageInput.classList.add("is-invalid")
+    messageInput.focus()}
+else{
+    if(!checkbox.checked){
+        checkbox.classList.add("is-invalid")
+        checkbox.focus()}
     else{
-        if(!checkbox.checked){
-            checkbox.classList.add("is-invalid")
-            checkbox.focus()}
-        else{
-            poznamkaFormular.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`
-        }}
+        poznamkaFormular.innerHTML = `<p class="card-text"> ${messageInput.value} </p>`}}
 })
